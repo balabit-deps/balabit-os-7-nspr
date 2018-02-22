@@ -1,0 +1,11 @@
+--- a/nspr/pr/tests/Makefile.in
++++ b/nspr/pr/tests/Makefile.in
+@@ -315,7 +315,7 @@ ifeq ($(OS_ARCH), SunOS)
+ endif # SunOS
+ 
+ ifeq (,$(filter-out Linux GNU GNU_%,$(OS_ARCH)))
+-    LDOPTS += -Xlinker -rpath $(ABSOLUTE_LIB_DIR)
++    LDOPTS += -Xlinker -rpath $(ABSOLUTE_LIB_DIR) -Xlinker --disable-new-dtags
+     ifeq ($(USE_PTHREADS),1)
+         EXTRA_LIBS = -lpthread
+     endif

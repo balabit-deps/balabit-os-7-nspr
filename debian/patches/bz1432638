@@ -1,0 +1,14 @@
+From: Jason Duerstock <jason.duerstock@gmail.com>
+Date: Wed, 24 Jan 2018 07:20:16 +0900
+Subject: Bug 1432638 - Add missing include for SIZE_MAX. r=glandium
+
+--- nspr-4.18.orig/nspr/pr/tests/prfz.c
++++ nspr-4.18/nspr/pr/tests/prfz.c
+@@ -10,6 +10,7 @@
+ #include <sys/types.h>
+ #include <limits.h>
+ #include <string.h>
++#include <stdint.h>
+ 
+ int
+ main(int argc, char **argv)

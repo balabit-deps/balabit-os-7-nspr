@@ -1,0 +1,62 @@
+Source: nspr
+Section: libs
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Maintainers of Mozilla-related packages <pkg-mozilla-maintainers@lists.alioth.debian.org>
+Uploaders: Mike Hommey <glandium@debian.org>
+Build-Depends: debhelper (>= 9), autotools-dev, dpkg-dev (>= 1.15.4)
+Standards-Version: 3.9.8.0
+Homepage: http://www.mozilla.org/projects/nspr/
+Vcs-Git: https://anonscm.debian.org/git/pkg-mozilla/nspr.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-mozilla/nspr.git
+
+Package: libnspr4
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: libnspr4-0d (<< 2:4.9-2~)
+Multi-Arch: ${misc:Multi-Arch}
+Description: NetScape Portable Runtime Library
+ This library provides platform independent non-GUI operating system
+ facilities including:
+  * threads,
+  * thread synchronisation,
+  * normal file I/O and network I/O,
+  * interval timing and calendar time,
+  * basic memory management (malloc and free),
+  * shared library linking.
+
+Package: libnspr4-dev
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends}, libnspr4 (>= ${source:Upstream-Version}), libnspr4 (<= ${source:Version}.1~)
+Description: Development files for the NetScape Portable Runtime library
+ This library provides platform independent non-GUI operating system
+ facilities including:
+  * threads,
+  * thread synchronisation,
+  * normal file I/O and network I/O,
+  * interval timing and calendar time,
+  * basic memory management (malloc and free),
+  * shared library linking.
+ .
+ Install this package if you wish to develop your own programs using the
+ NetScape Portable Runtime library.
+
+Package: libnspr4-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: libnspr4 (= ${binary:Version}), ${misc:Depends}
+Multi-Arch: ${misc:Multi-Arch}
+Description: Debugging symbols for the NetScape Portable Runtime library
+ This library provides platform independent non-GUI operating system
+ facilities including:
+  * threads,
+  * thread synchronisation,
+  * normal file I/O and network I/O,
+  * interval timing and calendar time,
+  * basic memory management (malloc and free),
+  * shared library linking.
+ .
+ This package provides the debugging symbols for the library.

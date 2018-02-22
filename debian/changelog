@@ -1,0 +1,1071 @@
+nspr (2:4.18-1ubuntu1) bionic; urgency=medium
+
+  * Resynchronize with Debian, remaining changes
+    - rules: Enable Thumb2 build on armel, armhf.
+    - d/p/fix_test_errcodes_for_runpath.patch: Fix testcases to handle
+      zesty linker default changing to --enable-new-dtags for -rpath.
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Thu, 22 Feb 2018 09:18:57 -0500
+
+nspr (2:4.18-1) unstable; urgency=medium
+
+  * New upstream release.
+  * nspr/pr/tests/prfz.c: Add missing include for SIZE_MAX. bz#1432638.
+    Closes: #887738. Thanks Jason Duerstock.
+
+ -- Mike Hommey <glandium@debian.org>  Mon, 29 Jan 2018 10:39:52 +0900
+
+nspr (2:4.16-1ubuntu2) artful; urgency=medium
+
+  * debian/patches/fix_ftbfs.patch: add missing header file to fix ftbfs.
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Thu, 12 Oct 2017 07:33:35 -0400
+
+nspr (2:4.16-1ubuntu1) artful; urgency=medium
+
+  * Resynchronize with Debian, remaining changes
+    - rules: Enable Thumb2 build on armel, armhf.
+    - d/p/fix_test_errcodes_for_runpath.patch: Fix testcases to handle
+      zesty linker default changing to --enable-new-dtags for -rpath.
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 23 Aug 2017 13:02:50 -0400
+
+nspr (2:4.16-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Mike Hommey <glandium@debian.org>  Thu, 10 Aug 2017 15:19:59 +0900
+
+nspr (2:4.15-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 17 Jun 2017 06:34:23 +0900
+
+nspr (2:4.14-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Mike Hommey <glandium@debian.org>  Wed, 19 Apr 2017 20:07:34 +0900
+
+nspr (2:4.13.1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * debian/control:
+    - Change Vcs-{Git,Browser} URLs.
+    - Bump Standards-Version to 3.9.8. No changes required.
+  * debian/rules:
+    - Avoid ignoring make clean errors.
+    - Move the --sourcedirectory option after dh target.
+  * debian/compat, debian/control: Bump debian/compat to 9.
+  * debian/libnspr4.lintian-overrides.in: Add a lintian override for
+    dev-pkg-without-shlib-symlink for the same reason there is a lintian
+    override for shlib-without-versioned-soname.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 19 Nov 2016 08:07:09 +0900
+
+nspr (2:4.12-6ubuntu1) zesty; urgency=medium
+
+  * Resynchronize with Debian, remaining changes
+    - rules: Enable Thumb2 build on armel, armhf.
+  * Drop:
+    - control: Change Vcs-* to XS-Debian-Vcs-*.
+  * New:
+    - nspr/pr/tests/Makefile.in: Fix testcases to handle zesty
+      linker default changing to --enable-new-dtags for -rpath.
+
+ -- Jon Grimm <jon.grimm@canonical.com>  Thu, 22 Dec 2016 16:09:56 -0600
+
+nspr (2:4.12-6) unstable; urgency=medium
+
+  * nspr/lib/libc/src/strcase.c, nspr/lib/tests/string.c: Fix PL_str*casecmp
+    similarly to PL_str*cmp.
+
+ -- Mike Hommey <glandium@debian.org>  Tue, 16 Aug 2016 07:22:46 +0900
+
+nspr (2:4.12-5) unstable; urgency=medium
+
+  * debian/rules: Set LD_LIBRARY_PATH when running base64t and string.
+
+ -- Mike Hommey <glandium@debian.org>  Mon, 15 Aug 2016 19:14:12 +0900
+
+nspr (2:4.12-4) unstable; urgency=medium
+
+  * debian/rules:
+    - Honour DEB_BUILD_OPTIONS=nocheck. Thanks Helmut Grohne/ Closes: #833771.
+    - Skip some tests that fail on buildds
+
+  * nspr/lib/libc/src/strcmp.c, nspr/lib/tests/string.c: Return consistent
+    results for PL_str*cmp when one of the pointers is NULL. bz#1295056.
+    This should fix tests on s390x.
+
+ -- Mike Hommey <glandium@debian.org>  Mon, 15 Aug 2016 10:26:46 +0900
+
+nspr (2:4.12-3) unstable; urgency=medium
+
+  * debian/control, debian/libnspr4.symbols, debian/libnspr4-0d*: Remove the
+    libnspr4-0d* transitional packages.
+  * debian/rules: Enable tests. Thanks Guido Günther. Closes: #809723.
+  * debian/libnspr4.symbols: Bump symbol version for PR_*printf.
+    Closes #820565.
+
+ -- Mike Hommey <glandium@debian.org>  Mon, 08 Aug 2016 11:04:39 +0900
+
+nspr (2:4.12-2ubuntu1) yakkety; urgency=medium
+
+   * Resynchronize with Debian, remaining changes
+    - rules: Enable Thumb2 build on armel, armhf.
+    - control: Change Vcs-* to XS-Debian-Vcs-*.
+
+ -- Jon Grimm <jon.grimm@canonical.com>  Fri, 24 Jun 2016 01:04:28 -0500
+
+nspr (2:4.12-2) unstable; urgency=medium
+
+  * debian/rules, debian/libnspr4.triggers. Replace makeshlibs scripts that
+    don't exist anymore with ldconfig triggers. Closes: #811118.
+
+ -- Mike Hommey <glandium@debian.org>  Sun, 03 Apr 2016 17:36:49 +0900
+
+nspr (2:4.12-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/libnspr4.symbols: Updated.
+
+ -- Mike Hommey <glandium@debian.org>  Wed, 09 Mar 2016 09:28:19 +0900
+
+nspr (2:4.11-1ubuntu1) xenial; urgency=medium
+
+  * Resynchronize with Debian, remaining changes
+    - rules: Enable Thumb2 build on armel, armhf.
+    - control: Change Vcs-* to XS-Debian-Vcs-*.
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 26 Nov 2015 10:17:42 +0100
+
+nspr (2:4.11-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Mike Hommey <glandium@debian.org>  Wed, 25 Nov 2015 09:02:00 +0900
+
+nspr (2:4.10.10-1ubuntu1) xenial; urgency=medium
+
+  * Resynchronize with Debian, remaining changes
+    - rules: Enable Thumb2 build on armel, armhf.
+    - control: Change Vcs-* to XS-Debian-Vcs-*.
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 04 Nov 2015 13:16:39 +0100
+
+nspr (2:4.10.10-1) unstable; urgency=high
+
+  * New upstream release.
+  * Fixes mfsa-2015-133, aka CVE-2015-7183.
+
+ -- Mike Hommey <glandium@debian.org>  Wed, 04 Nov 2015 08:25:04 +0900
+
+nspr (2:4.10.9-2) unstable; urgency=medium
+
+  * nspr/pr/include/md/_linux.cfg: Fix mips64 condition testing, avoiding
+    e.g. wrong types being picked up on mips/mipsel.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 29 Aug 2015 10:22:50 +0900
+
+nspr (2:4.10.9-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/libnspr4.symbols: Updated.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 22 Aug 2015 08:59:00 +0900
+
+nspr (2:4.10.8-2ubuntu1) wily; urgency=medium
+
+  * Merge with Debian; remaining changes:
+    - rules: Enable Thumb2 build on armel, armhf.
+    - control: Change Vcs-* to XS-Debian-Vcs-*.
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 07 Jul 2015 07:52:19 -0400
+
+nspr (2:4.10.8-2) unstable; urgency=medium
+
+  * debian/rules:
+    - Do not pretend nspr's configure can be run through dh_auto_configure.
+      The architecture flags are different than "standard" autoconf.
+      Closes: #782983.
+    - Use changelog date to feed nspr build system.
+    - Pass --enable-x32 for x32 builds.
+  * debian/libnspr4.symbols:
+    - Updated for x32-specific symbols. Thanks to Daniel Schepler
+      <dschepler@gmail.com>.
+    - Reordered symbols.
+
+ -- Mike Hommey <glandium@debian.org>  Thu, 28 May 2015 15:02:05 +0900
+
+nspr (2:4.10.8-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Mike Hommey <glandium@debian.org>  Wed, 01 Apr 2015 16:43:15 +0900
+
+nspr (2:4.10.7-1ubuntu1) utopic; urgency=medium
+
+  * Merge with Debian; remaining changes:
+    - rules: Enable Thumb2 build on armel, armhf.
+    - control: Change Vcs-* to XS-Debian-Vcs-*.
+    - debian/rules, debian/libnspr3.symbols: Add support for compiling
+      with -mx32 instead of -m64 or -m32.
+
+ -- Matthias Klose <doko@ubuntu.com>  Tue, 09 Sep 2014 16:28:33 +0200
+
+nspr (2:4.10.7-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Mike Hommey <glandium@debian.org>  Sun, 24 Aug 2014 08:25:26 +0900
+
+nspr (2:4.10.6-1ubuntu1) utopic; urgency=medium
+
+  * Merge with Debian; remaining changes:
+    - rules: Enable Thumb2 build on armel, armhf.
+    - control: Change Vcs-* to XS-Debian-Vcs-*.
+    - debian/rules, debian/libnspr3.symbols: Add support for compiling
+      with -mx32 instead of -m64 or -m32.
+  * Dropped changes (for pre-trusty releases):
+    - control: Add conflicts to evolution-documentation-*,
+      language-support-translation-*.
+    - control: Add Breaks: evolution-plugins.
+  * Dropped patches:
+    - arm64support: wasn't applied
+    - cross: wasn't applied
+    - ppc64le-support: upstream
+    - x32_support: upstream
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Fri, 27 Jun 2014 11:57:11 -0400
+
+nspr (2:4.10.6-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 07 Jun 2014 17:10:25 +0900
+
+nspr (2:4.10.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Mike Hommey <glandium@debian.org>  Fri, 21 Mar 2014 07:51:39 +0900
+
+nspr (2:4.10.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/libnspr4.symbols: Updated.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 08 Feb 2014 10:51:24 +0900
+
+nspr (2:4.10.2-1ubuntu1) trusty; urgency=medium
+
+  * Merge with Debian; remaining changes:
+    - rules: Enable Thumb2 build on armel, armhf.
+    - control: Change Vcs-* to XS-Debian-Vcs-*.
+    - control: Add conflicts to evolution-documentation-*,
+      language-support-translation-*.
+    - control: Add Breaks: evolution-plugins.
+    - Add support for ppc64el (Ulrich Weigand).
+  * Add support for compiling with -mx32 instead of -m64 or -m32.
+
+ -- Matthias Klose <doko@ubuntu.com>  Mon, 06 Jan 2014 20:51:42 +0100
+
+nspr (2:4.10.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 16 Nov 2013 08:11:38 +0900
+
+nspr (2:4.10.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Mike Hommey <glandium@debian.org>  Mon, 21 Oct 2013 08:19:05 +0900
+
+nspr (2:4.10-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/rules: Adjusted to new source layout.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 15 Jun 2013 18:37:30 +0900
+
+nspr (2:4.9.6-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/libnspr4.symbols: Updated.
+
+ -- Mike Hommey <glandium@debian.org>  Thu, 04 Apr 2013 23:43:12 +0200
+
+nspr (2:4.9.5-1ubuntu2) trusty; urgency=low
+
+  * Add support for ppc64el (Ulrich Weigand).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 16 Dec 2013 01:43:51 +0000
+
+nspr (2:4.9.5-1ubuntu1) raring-proposed; urgency=low
+
+  * Merge from Debian unstable.  Remaining changes:
+    - rules: Enable Thumb2 build on armel, armhf.
+    - control: Change Vcs-* to XS-Debian-Vcs-*.
+    - control: Add conflicts to evolution-documentation-*,
+      language-support-translation-*.
+    - control: Add Breaks: evolution-plugins.
+    - debian/patches/cross: Fix crossbuilding. Patch taken from chromiumos
+      overlay. Refreshed
+    - debian/patches/arm64support: Add arm64/aarch64 support
+
+ -- Jamie Strandboge <jamie@ubuntu.com>  Wed, 13 Mar 2013 09:38:00 -0500
+
+nspr (2:4.9.5-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Mike Hommey <glandium@debian.org>  Fri, 15 Feb 2013 09:11:59 +0100
+
+nspr (2:4.9.4-2ubuntu4) raring; urgency=low
+
+  * Add arm64/aarch64 support
+
+ -- Wookey <wookey@wookware.org>  Fri, 22 Feb 2013 11:50:14 +0000
+
+nspr (2:4.9.4-2ubuntu3) raring; urgency=low
+
+  * Always pass full build/host args, as the build system gets confused.
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Fri, 22 Feb 2013 01:38:58 +0000
+
+nspr (2:4.9.4-2ubuntu2) raring; urgency=low
+
+  * Fix crossbuilding. Patch taken from chromiumos overlay.
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Thu, 21 Feb 2013 20:05:57 +0000
+
+nspr (2:4.9.4-2ubuntu1) raring-proposed; urgency=low
+
+  * Merge from Debian unstable.  Remaining changes:
+    - rules: Enable Thumb2 build on armel, armhf.
+    - control: Change Vcs-* to XS-Debian-Vcs-*.
+    - control: Add conflicts to evolution-documentation-*,
+      language-support-translation-*.
+    - control: Add Breaks: evolution-plugins.
+
+ -- Jamie Strandboge <jamie@ubuntu.com>  Mon, 14 Jan 2013 15:26:59 -0600
+
+nspr (2:4.9.4-2) unstable; urgency=low
+
+  * pr/src/Makefile.in: Use -lrt appropriately (or not) on Android, GNU/Hurd
+    and GNU/kFreeBSD. bz#824742.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 29 Dec 2012 09:50:20 +0100
+
+nspr (2:4.9.4-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Mike Hommey <glandium@debian.org>  Sun, 23 Dec 2012 17:36:15 +0100
+
+nspr (2:4.9.3-1ubuntu1) raring; urgency=low
+
+  * Merge from Debian unstable.  Remaining changes:
+    - rules: Enable Thumb2 build on armel, armhf.
+    - control: Change Vcs-* to XS-Debian-Vcs-*.
+    - control: Add conflicts to evolution-documentation-*,
+      language-support-translation-*.
+    - control: Add Breaks: evolution-plugins.
+
+ -- Timo Aaltonen <tjaalton@ubuntu.com>  Tue, 27 Nov 2012 17:39:22 +0200
+
+nspr (2:4.9.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Mike Hommey <glandium@debian.org>  Thu, 01 Nov 2012 10:04:17 +0100
+
+nspr (2:4.9.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/libnspr4.symbols: Add new symbols.
+
+ -- Mike Hommey <glandium@debian.org>  Fri, 20 Jul 2012 08:40:44 +0200
+
+nspr (2:4.9.1-1) unstable; urgency=low
+
+   * New upstream release. Now patch-free!
+   * debian/copyright: Upstream upgraded to MPL 2.0.
+
+ -- Mike Hommey <glandium@debian.org>  Fri, 15 Jun 2012 09:25:54 +0200
+
+nspr (2:4.9-3) unstable; urgency=low
+
+  * debian/rules: Re-enable read-only relocations. Closes: #673090.
+
+ -- Mike Hommey <glandium@debian.org>  Thu, 17 May 2012 08:43:32 +0200
+
+nspr (2:4.9-2) unstable; urgency=low
+
+  * debian/control, debian/libnspr4*, debian/rules,
+    mozilla/nsprpub/config/rules.mk, mozilla/nsprpub/configure.in,
+    mozilla/nsprpub/lib/ds/Makefile.in,
+    mozilla/nsprpub/lib/libc/src/Makefile.in,
+    mozilla/nsprpub/pr/src/Makefile.in: Move to unversioned library.
+    ABI compatibility is ensured upstream, and the SO version, if it needed
+    a change at any time, would be a change in the library name. There is
+    no reason to keep making compatibility more difficult with other distros
+    and upstream binary releases. While previous versions were one-way
+    compatible (binaries built against other distros or upstream nspr could
+    work on Debian), this approach works both ways.
+  * debian/make.mk: Makefile utilities imported from Iceweasel.
+  * debian/rules, mozilla/nsprpub/configure.in: Use dpkg-buildflags for
+    hardening.
+  * debian/rules: Limit the number of times dpkg-architecture is called.
+  * debian/control: Bump Standards-Version to 3.9.3.0. No changes required.
+  * Adding an epoch to match the old libnspr4 package that used to be in
+    the Debian archive.
+
+ -- Mike Hommey <glandium@debian.org>  Sun, 13 May 2012 10:39:16 +0200
+
+nspr (4.9-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Mike Hommey <glandium@debian.org>  Fri, 24 Feb 2012 09:15:53 +0100
+
+nspr (4.9~beta5-2) unstable; urgency=low
+
+  * debian/rules, debian/libnspr4-0d.lintian-overrides.in: Use wildcards for
+    multiarch in lintian overrides. Closes: #658843.
+  * mozilla/nsprpub/configure.*: Allow to enable a set of hardening flags.
+    bz#725941.
+  * debian/rules: Enable hardening. Closes: #657522.
+
+ -- Mike Hommey <glandium@debian.org>  Fri, 10 Feb 2012 10:14:50 +0100
+
+nspr (4.9~beta5-1) experimental; urgency=low
+
+  * New upstream beta release.
+  * mozilla/nsprpub/configure.*, mozilla/nsprpub/config/rules.mk: Refreshed.
+
+ -- Mike Hommey <glandium@debian.org>  Fri, 23 Dec 2011 17:06:55 +0100
+
+nspr (4.8.9-1ubuntu3) quantal; urgency=low
+
+  * Reupload to quantal.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Wed, 12 Sep 2012 08:13:48 -0700
+
+nspr (4.8.9-1ubuntu2.3) precise-proposed; urgency=low
+
+  * language-support-LANG was still around in 11.04 so the previous change
+    is requiring a dist-upgrade for any user who upgraded from 11.04 to 11.10
+    and then to 12.04, instead of being limited to machines that were
+    originally installed with 9.04 as was planned.
+    Removing language-support-LANG from the Breaks, which should resolve the
+    issue for these users while still removing language-support-translations
+    on systems. (LP: #1036794)
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Fri, 17 Aug 2012 09:46:51 -0400
+
+nspr (4.8.9-1ubuntu2.2) precise-proposed; urgency=low
+
+  * Add additional Conflicts: on the obsolete evolution-documentation-*
+    packages, which are held back on some users' systems despite being
+    obsolete before 10.04; and also on the matching
+    language-support-translations-* and language-support-* packages.  This
+    should ensure libnspr is getting upgraded, instead of evolution being
+    held back.  LP: #1036794.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Wed, 15 Aug 2012 13:52:33 -0700
+
+nspr (4.8.9-1ubuntu2.1) precise-proposed; urgency=low
+
+  * Add Breaks: evolution-plugins (<< 3.2.0-0ubuntu2) to libnspr4,
+    required to get the dist-upgrader to resolve lucid -> precise.
+    (LP: #1029531)
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Wed, 08 Aug 2012 17:17:49 -0400
+
+nspr (4.8.9-1ubuntu2) precise; urgency=low
+
+  * Fix lintian overrides to just list the soname warning to ignore
+    and not list the paths, which would break installing multiarched libs.
+
+ -- Timo Aaltonen <tjaalton@ubuntu.com>  Mon, 12 Dec 2011 12:56:54 +0200
+
+nspr (4.8.9-1ubuntu1) precise; urgency=low
+
+  * Merge from Debian testing. Remaining changes:
+    - Ship the main SO files in an unversioned binary, as we don't have
+      versioned SO's in Ubuntu. Maintain a transitional versioned binary
+      package containing the versioned symlinks, to maintain compatibility
+      with Debian
+      * update control, rules
+      * mass rename libnspr4-0d* => libnspr4*
+      * add some lintian overrides
+    - Fix postinst-must-call-ldconfig - dh_makeshlibs doesn't seem to add
+      the maintainer script hooks with the unversioned SO files, so add
+      them manually
+      * add libnspr4.postinst, libnspr4.postrm
+    - rules: Enable Thumb2 build on armel, armhf.
+    - rules: Add support for mozilla-devscripts.
+    - control: Change Vcs-* to XS-Debian-Vcs-*.
+  * sonames.patch: Added a patch to fill the object header with a valid
+    SONAME, otherwise dpkg-gensymbols would barf.
+  * libnspr4-dev: Silence an additional lintian warning.
+  * rules: Add a missing backslash to configure flags.
+
+ -- Timo Aaltonen <tjaalton@ubuntu.com>  Tue, 29 Nov 2011 15:01:32 +0200
+
+nspr (4.8.9-1) unstable; urgency=low
+
+  * New upstream release.
+  * mozilla/nsprpub/configure.*: Refreshed.
+  * debian/libnspr4-0d.symbols: Add PR_GetVersion to the symbols file.
+  * debian/rules: Bump shlibs.
+
+ -- Mike Hommey <glandium@debian.org>  Fri, 12 Aug 2011 12:11:27 +0200
+
+nspr (4.8.8-2) unstable; urgency=low
+
+  * debian/libnspr4-0d.install.in, debian/libnspr4-0d.lintian-overrides.in,
+    debian/libnspr4-dev.install.in, debian/libnspr4-dev.links.in,
+    debian/control, debian/rules: Switch to multi-arch while keeping
+    backports easy. Closes: #497087.
+  * debian/control: Bump Standards-Version to 3.9.2.0. No changes required.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 18 Jun 2011 18:45:29 +0900
+
+nspr (4.8.8-1) unstable; urgency=low
+
+  * New upstream release.
+  * mozilla/nsprpub/configure: Refreshed.
+  * debian/libnspr4-0d.symbols*:
+    - Use symbols tags instead of individual symbols files for each
+      architecture.
+    - Add symbols tags for powerpcspe. Closes: #614228
+
+ -- Mike Hommey <glandium@debian.org>  Tue, 24 May 2011 20:11:53 +0200
+
+nspr (4.8.7-2) unstable; urgency=low
+
+  * Upload to unstable.
+  * debian/rules: Merge OPTFLAGS and DEBUGFLAGS in one variable.
+  * debian/control, debian/patches/30_config_64bits.patch,
+    debian/patches/99_configure.patch, debian/patches/series,
+    debian/rules: Use dpkg-architecture to enable 64-bits build on 64 bits
+    architectures, instead of relying on a patch to configure.in.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 19 Feb 2011 14:21:52 +0100
+
+nspr (4.8.7-1) experimental; urgency=low
+
+  * New upstream release.
+  * mozilla/nsprpub/configure.in: Don't use -march=armv5te -mthumb-interwork
+    on non-android arm platforms. bz#626035.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 15 Jan 2011 12:07:25 +0100
+
+nspr (4.8.7-0ubuntu4) precise; urgency=low
+
+  * debian/rules: enable Thumb2 on armhf as well as armel.
+
+ -- Adam Conrad <adconrad@ubuntu.com>  Mon, 21 Nov 2011 21:31:15 -0700
+
+nspr (4.8.7-0ubuntu3) oneiric; urgency=low
+
+  * debian/rules: enable Thumb2 build on armel.
+  * debian/patches/40_fix_arm_ftbfs.patch: Fix passing of assembler
+   flags for ARM in configure.in. Fixes FTBFS.
+  * debian/patches/99_configure.patch: Regenerate
+
+ -- Jani Monoses <jani@ubuntu.com>  Tue, 12 Jul 2011 23:51:37 +0300
+
+nspr (4.8.7-0ubuntu2) oneiric; urgency=low
+
+  * Build for multiarch.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Tue, 31 May 2011 23:46:56 -0700
+
+nspr (4.8.7-0ubuntu1) natty; urgency=low
+
+  * New upstream release v4.8.7 (NSPR_4_8_7_RTM)
+  * Refresh patches
+    - update debian/patches/30_config_64bits.patch
+    - update debian/patches/99_configure.patch
+  * Drop the link shuffeling now, as all upgraders to this version will be
+    using a fixed package anyway
+    - remove debian/libnspr4-0d.postinst
+    - remove debian/libnspr4-0d.postrm
+    - remove debian/libnspr4-0d.preinst
+    - remove debian/libnspr4-0d.prerm
+  * Drop arch-specific symbols files for architectures we don't support
+    - remove debian/libnspr4-0d.symbols.hurd_i386
+    - remove debian/libnspr4-0d.symbols.ia64
+    - remove debian/libnspr4-0d.symbols.lpia
+  * Ship the main SO files in an unversioned binary, as we don't have
+    versioned SO's in Ubuntu. Maintain a transitional versioned binary
+    package containing the versioned symlinks, to maintain compatibility with
+    Debian
+    - update debian/control
+    - mass rename debian/libnspr4-0d* => debian/libnspr4*
+    - update debian/rules
+  * Fix postinst-must-call-ldconfig - dh_makeshlibs doesn't seem to add
+    the maintainer script hooks with the unversioned SO files, so add them
+    manually
+    - add debian/libnspr4.postinst
+    - add debian/libnspr4.postrm
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Tue, 11 Jan 2011 14:55:23 -0600
+
+nspr (4.8.6-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches/*: Refresh patches.
+  * debian/patches/90_Move_PR_STATIC_ASSERT_from_prlog.h_to_prtypes.h.patch:
+    Removed, as applied upstream.
+  * debian/libnspr4-0d.symbols: Add new symbol.
+  * debian/rules:
+    - Bump shlibs.
+    - Let nspr use its own optimization options.
+    - Use the --enable-debug-symbols configure option instead of forcing -g
+      into compiler flags.
+  * debian/control: Bump Standards-Version to 3.9.1.0.
+
+ -- Mike Hommey <glandium@debian.org>  Fri, 06 Aug 2010 08:21:33 +0200
+
+nspr (4.8.6-0ubuntu1) maverick; urgency=low
+
+  * New upstream release v4.8.6
+  * Refresh patches:
+    - update debian/patches/99_configure.patch 
+  * Update symbols file for API addition
+    - update debian/libnspr4-0d.symbols
+  * Fix some lintian warnings
+    - update debian/control
+    - update debian/rules
+    - update debian/libnspr4-0d.postinst
+    - update debian/copyright
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 25 Aug 2010 16:41:12 +0100
+
+nspr (4.8.4-2) unstable; urgency=low
+
+  * debian/patches/90_Move_PR_STATIC_ASSERT_from_prlog.h_to_prtypes.h.patch:
+    Move PR_STATIC_ASSERT from prlog.h to prtypes.h. bz#551782.
+  * debian/control:
+    - Remove conflicts with very old packages.
+    - Bump Standards-Version to 3.9.0.0.
+
+ -- Mike Hommey <glandium@debian.org>  Thu, 08 Jul 2010 13:52:39 +0200
+
+nspr (4.8.4-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches/99_configure.dpatch: Updated.
+  * debian/control:
+    - Remove old dependency from libnspr4-dev on libnspr4-0d (>> 4.7.1-1).
+      It was only necessary when Upstream-Version was 4.7.1.
+    - Bump Standards-Version to 3.8.4.0.
+
+ -- Mike Hommey <glandium@debian.org>  Mon, 08 Mar 2010 09:33:17 +0100
+
+nspr (4.8.4-0ubuntu1) lucid; urgency=low
+
+  * New upstream release: 4.8.4
+  * Adjust patches to changed upstream codebase
+    - update debian/patches/99_configure.patch
+
+ -- Chris Coulson <chris.coulson@canonical.com>  Wed, 24 Mar 2010 14:33:41 +0000
+
+nspr (4.8.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/rules, debian/patches/00list, debian/patches/80_config.dpatch:
+    Move what debian/patches/80_config.dpatch does into debian/rules.
+  * debian/patches/*: Refresh patches.
+  * debian/rules: Remove the rule to refresh 99_configure.dpatch.
+  * debian/patches/*, debian/rules, debian/control, debian/source/format:
+    Switch to 3.0 (quilt) format.
+  * debian/control: Bump Standards-Version to 3.8.3.0.
+  * debian/compat, debian/control, debian/rules: Simplify debian/rules
+    with the use of dh. This has the side effect of calling make distclean
+    properly and Closes: #552027.
+  * debian/control: Add ${misc:Depends} to libnspr4-0d-dbg dependencies.
+
+ -- Mike Hommey <glandium@debian.org>  Mon, 25 Jan 2010 12:42:30 +0100
+
+nspr (4.8.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fixes overflow related to mfsa-2009-34, aka CVE-2009-2463.
+  * debian/patches/82_CVE-2009-1563.dpatch: Removed, as applied upstream.
+  * debian/patches/99_configure.dpatch: Updated.
+  * debian/patches/00list: Remove 82_CVE-2009-1563.
+
+ -- Mike Hommey <glandium@debian.org>  Wed, 04 Nov 2009 15:46:48 +0100
+
+nspr (4.8-2) unstable; urgency=low
+
+  * debian/patches/82_CVE-2009-1563.dpatch: Fix for CVE-2009-1563 aka
+    mfsa-2009-59.
+  * debian/patches/00list: Add 82_CVE-2009-1563.
+
+ -- Mike Hommey <glandium@debian.org>  Wed, 28 Oct 2009 16:46:28 +0100
+
+nspr (4.8-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches/30_reinit.dpatch: Remove, as applied upstream.
+  * debian/patches/00list: Remove 30_reinit.
+  * debian/patches/81_sonames.dpatch,
+    debian/patches/99_configure.dpatch: Adapted to upstream changes.
+  * debian/libnspr4-0d.symbols: Add new symbols.
+  * debian/rules: Bump shlibs version.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 13 Jun 2009 21:27:09 +0200
+
+nspr (4.8-0ubuntu2) lucid; urgency=low
+
+  * rebuild rest of main for armel armv7/thumb2 optimization;
+    UbuntuSpec:mobile-lucid-arm-gcc-v7-thumb2
+
+ -- Alexander Sack <asac@ubuntu.com>  Sun, 07 Mar 2010 00:58:28 +0100
+
+nspr (4.8-0ubuntu1) karmic; urgency=low
+
+  * New upstream release: 4.8 (LP: #387812)
+  * adjust patches to changed upstreanm codebase
+    - update debian/patches/99_configure.patch
+  * update shlibs symbols to include new API elements
+    - update debian/libnspr4-0d.symbols
+
+ -- Alexander Sack <asac@ubuntu.com>  Mon, 10 Aug 2009 11:34:26 +0200
+
+nspr (4.7.5-0ubuntu1) karmic; urgency=low
+
+  * New upstream version: 4.7.5 (LP: #387745)
+    - see USN-810-2
+
+  * adjust patches to changed upstream code base
+    - update debian/patches/99_configure.patch
+
+ -- Alexander Sack <asac@ubuntu.com>  Tue, 16 Jun 2009 11:28:24 +0200
+
+nspr (4.7.4-3) unstable; urgency=low
+
+  * debian/libnspr4-0d.symbols.kfreebsd*: Add symbols files for kfreebsd
+    i386 and amd64. Closes: #528781.
+  * debian/patches/30_reinit.dpatch: Apply another path from bz#485318 to
+    allow proper reinitialization of the library. Closes: #520689.
+  * debian/patches/00list: Add 30_reinit.
+
+ -- Mike Hommey <glandium@debian.org>  Wed, 20 May 2009 08:36:20 +0200
+
+nspr (4.7.4-2) unstable; urgency=low
+
+  * debian/libnspr4-0d.symbols.hurd_i386: Renamed to
+    debian/libnspr4-0d.symbols.hurd-i386. Closes: #524580.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 18 Apr 2009 22:24:46 +0200
+
+nspr (4.7.4-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches/30_dev_urandom.dpatch: Drop, as applied upstream.
+  * debian/patches/00list: Updated accordingly.
+  * debian/patches/38_hurd.dpatch, debian/patches/81_sonames.dpatch,
+    debian/patches/99_configure.dpatch: Adapted to upstream changes.
+  * debian/rules: Force dpkg-gensymbols to fail when symbols are missing.
+  * debian/control:
+    + Bumped Standards-Version to 3.8.1.0. No changes needed.
+    + Put the libnspr4-0d-dbg package in the "debug" section.
+    + Correct libnspr4-0d-dbg short description.
+    + Remove redundant section on libnspr4-0d.
+    + Build-depend on proper version of debhelper for dh_lintian.
+  * debian/*.lintian-overrides, debian/rules: Install some Lintian
+    overrides with dh_lintian.
+  * debian/patches/30_reinit.dpatch: Apply patch from bz#485318 to allow
+    proper reinitialization of the library. Closes: #520689.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 18 Apr 2009 01:28:48 +0200
+
+nspr (4.7.3-0ubuntu2) jaunty; urgency=low
+
+  * LP: #316452 - ldconfig breaks/removes legacy links for
+    previously versioned library names during upgrade; the fix
+    prevents ldconfig from treating the transitional/backup files
+    as "libs" by using a prefix ("XNOLDCONFIG_")
+    - debian/libnspr4-0d.postinst
+    - debian/libnspr4-0d.postrm
+    - debian/libnspr4-0d.preinst
+    - debian/libnspr4-0d.prerm
+
+ -- Alexander Sack <asac@ubuntu.com>  Wed, 14 Jan 2009 13:27:43 +0100
+
+nspr (4.7.3-0ubuntu1) jaunty; urgency=low
+
+  * New upstream version: 4.7.3 from NSPR_4_7_3_RTM tag
+
+  [ Fabien Tassin <fta@ubuntu.com> ]
+  * LP: #269188 - use /dev/urandom for better entropy on LTSP environments
+  * update diverged patches:
+    - update debian/patches/30_pkgconfig.patch
+    - update debian/patches/81_sonames.patch
+    - update debian/patches/99_configure.patch
+
+  [ Alexander Sack <asac@ubuntu.com> ]
+  Drop debian soname patch for full upstream compatibility
+  * eliminate soname patch
+    - delete debian/patches/81_sonames.patch
+    - update debian/patches/series
+  * refresh configure patch to reflect dropped soname patch
+    - update debian/patches/99_configure.patch
+  * install unversioned .so files
+    - update debian/libnspr4-0d.install
+  * .so.0d links are not created without the soname patch. we create
+    backlinks to the unversioned .so libs using debhelper; also we
+    cannot dh_install the .0d versioned libs anymore and we drop
+    them from .install accordingly
+    - add debian/libnspr4-0d.links
+    - update debian/libnspr4-0d.install
+  * implement link shuffeling transition (with abort cases) in
+    maintainer scripts; affected libs: libnspr4.so libplc4.so libplds4.so
+    - add debian/libnspr4-0d.postinst
+    - add debian/libnspr4-0d.postrm
+    - add debian/libnspr4-0d.preinst
+    - add debian/libnspr4-0d.prerm
+  * drop soname version suffix from symbol files and reflect this fact by
+    adjusting minimum version to this package version (4.7.3-0ubuntu1~)
+    - update debian/libnspr4-0d.symbols
+    - update debian/libnspr4-0d.symbols.amd64
+    - update debian/libnspr4-0d.symbols.i386
+    - update debian/libnspr4-0d.symbols.ia64
+    - update debian/libnspr4-0d.symbols.lpia
+    - update debian/libnspr4-0d.symbols.powerpc
+  * bump lower shlibs version constraint to 4.7.1+1.9-0ubuntu5~
+    - update debian/rules
+  * rerun autoconf2.13 to apply dropped 81_sonames.patch to configure
+    - update debian/patches/99_configure.patch
+  * explitly define libnspr4_0d_EXPORTED_LIBS and pass those manually
+    to dpkg-gensymbols to workaround uncommon SONAME used by nspr libs
+    - update debian/rules
+  * don't pretend to create shlibs-control file anymore; add binary
+    lintian override for that
+    - update debian/rules
+  * add #DEBHELPER# token to maintainer scripts
+    - update debian/libnspr4-0d.postinst
+    - update debian/libnspr4-0d.postrm
+    - update debian/libnspr4-0d.preinst
+    - update debian/libnspr4-0d.prerm
+
+ -- Alexander Sack <asac@ubuntu.com>  Sun, 11 Jan 2009 13:50:07 +0100
+
+nspr (4.7.1+1.9-0ubuntu4) intrepid; urgency=low
+
+  * LP: #245122 - fix upgrade issue introduced by "unbreak binary
+    compatibility" upload by adding Conflicts/Replaces on libnspr4
+    - update debian/control
+
+ -- Alexander Sack <asac@ubuntu.com>  Tue, 15 Jul 2008 15:25:53 +0200
+
+nspr (4.7.1+1.9-0ubuntu3) intrepid; urgency=low
+
+  * LP: #245122 - fix upgrade issue introduced by "unbreak binary
+    compatibility" upload by adding Conflicts/Replaces on libnspr4 (<< 4)
+    - update debian/control
+
+ -- Alexander Sack <asac@ubuntu.com>  Wed, 09 Jul 2008 21:41:01 +0200
+
+nspr (4.7.1+1.9-0ubuntu2) intrepid; urgency=low
+
+  * unbreak binary compatibility for extensions built against upstream
+    xulrunner by moving /usr/lib/.so links from libnspr4-dev package
+    to libnspr4-0d; in turn we introduce versioned to Conflicts/Replaces
+    to provide a smooth upgrade. (LP: #244439)
+    - update debian/libnspr4-0d.install
+    - update debian/libnspr4-dev.install
+    - update debian/control
+
+ -- Alexander Sack <asac@ubuntu.com>  Tue, 01 Jul 2008 11:46:23 +0200
+
+nspr (4.7.1+1.9-0ubuntu1) intrepid; urgency=low
+
+  * New upstream release, picked from FIREFOX_3_0rc1_RELEASE cvs tag
+    (LP: #233922)
+  * update diverged patches
+    - update debian/patches/30_pkgconfig.patch
+    - update debian/patches/81_sonames.patch
+    - update debian/patches/99_configure.patch
+
+ -- Fabien Tassin <fta@sofaraway.org>  Wed, 21 May 2008 14:50:02 +0200
+
+nspr (4.7.1-4) unstable; urgency=low
+
+  * debian/patches/30_dev_urandom.dpath: Use /dev/urandom instead of
+    /dev/random to avoid freezing at iceweasel startup when there is
+    not enough entropy. Closes: #499146.
+  * debian/patches/00list: Updated accordingly.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 20 Sep 2008 09:50:13 +0200
+
+nspr (4.7.1-3) unstable; urgency=low
+
+  * debian/control: Make libnspr4-0d conflict with old libnspr4, which can
+    still be installed on some systems, though it hasn't been in the archive
+    since sarge. Closes: #485079.
+
+ -- Mike Hommey <glandium@debian.org>  Sun, 08 Jun 2008 14:09:34 +0200
+
+nspr (4.7.1-2) unstable; urgency=low
+
+  * debian/libnspr4-dev.install, debian/libnspr4-0d.install: Don't install so
+    files in the -dev package but in the library package. It will allow
+    external applications linked against upstream nspr to work on Debian with
+    system nspr libraries, and will avoid all browsers to have to implement
+    symlinks themselves to allow some external plugins to work properly.
+  * debian/control: Make libnspr4-0d conflict with older versions of
+    libnspr4-dev and libnspr4-dev need newer libnspr4-0d accordingly.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 07 Jun 2008 11:36:46 +0200
+
+nspr (4.7.1-1) unstable; urgency=low
+
+  * New upstream release, picked from NSPR_4_7_1_RTM cvs tag.
+  * debian/patches/99_configure.dpatch: Updated.
+
+ -- Mike Hommey <glandium@debian.org>  Sun, 11 May 2008 17:05:28 +0200
+
+nspr (4.7.1~beta2-0ubuntu1) hardy; urgency=low
+
+  * New upstream release, picked from NSPR_4_7_1_BETA2 cvs tag
+  * bump shlibs requirements
+    - update debian/rules
+
+ -- Fabien Tassin <fta@sofaraway.org>  Fri, 04 Apr 2008 16:14:45 +0200
+
+nspr (4.7.0-2) unstable; urgency=low
+
+  * debian/libnspr4-0d.symbols.powerpc: Add new powerpc specific symbols.
+  * debian/control: Turn Homepage indications in descriptions into a
+    control field.
+  * debian/rules:
+    + Don't ignore $(MAKE) distclean errors.
+    + Bump shlibs, but only for ppc.
+  * debian/patches/38_hurd.dpatch: Fix FTBFS on Hurd. Closes: #457573.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 08 Mar 2008 08:01:47 +0100
+
+nspr (4.7.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches/99_configure.dpatch: Updated.
+
+ -- Mike Hommey <glandium@debian.org>  Fri, 07 Mar 2008 19:32:28 +0100
+
+nspr (4.7.0~1.9b4-0ubuntu1) hardy; urgency=low
+
+  * New upstream release, picked from FIREFOX_3_0b4_RELEASE cvs tag
+  * update configure patch
+    - update debian/patches/99_configure.patch
+  * bump shlibs requirements
+    - update debian/rules
+
+ -- Alexander Sack <asac@ubuntu.com>  Tue, 11 Mar 2008 01:47:11 +0100
+
+nspr (4.7.0~1.9b3-0ubuntu2) hardy; urgency=low
+
+  * Add powerpc specific symbols file
+    - add debian/libnspr4-0d.symbols.powerpc
+  * Refresh diverged patch:
+    - update debian/patches/99_configure.patch
+
+ -- Fabien Tassin <fta@sofaraway.org>  Sun, 16 Mar 2008 17:36:03 +0100
+
+nspr (4.7.0~1.9b3-0ubuntu1) hardy; urgency=low
+
+  * New upstream snapshot, picked from FIREFOX_3_0b3_RELEASE cvs tag
+  * Add Homepage field and bump Standards-Version to 3.7.3
+    - update debian/control
+  * Add support for mozilla-devscripts
+    - update debian/rules
+  * Update quilt rules and add a 'patches' link to make maintenance easier
+    - update debian/rules
+  * Pass -c4 to dpkg-gensymbols
+    - update debian/rules
+  * Add lpia specific symbols file
+    - add debian/libnspr4-0d.symbols.lpia
+
+ -- Fabien Tassin <fta@sofaraway.org>  Fri, 08 Feb 2008 20:13:42 +0100
+
+nspr (4.7.0~1.9b2+nobinonly-0ubuntu1) hardy; urgency=low
+
+  * New upstream snapshot, picked from FIREFOX_3_0b2_RELEASE cvs tag.
+  * ubuntunize maintainer field
+    - update debian/control
+
+ -- Alexander Sack <asac@jwsdot.com>  Sat, 24 Nov 2007 19:12:48 +0100
+
+nspr (4.7.0~1.9b1-2) unstable; urgency=low
+
+  * debian/*.symbols.*: Remove "../../" workaround now that dh_makeshlibs
+    supports symbols files includes properly.
+  * debian/control:
+    + Build depend on debhelper (>= 5.0.62), where this happened. Remove
+      dpkg-dev versioned build-dependency, as debhelper already depends
+      on the proper one, and this dependency is obviously not going to be
+      dropped.
+    + Bumped Standards-Version to 3.7.3.0. No changes needed.
+
+ -- Mike Hommey <glandium@debian.org>  Thu, 13 Dec 2007 21:22:50 +0100
+
+nspr (4.7.0~1.9b1-1) unstable; urgency=low
+
+  * New upstream snapshot, picked from FIREFOX_3_0b1_RELEASE cvs tag.
+  * debian/patches/81_sonames.dpatch: Updated to fit upstream changes.
+  * debian/patches/18_kbsd_nspr.dpatch,
+    debian/patches/30_nspr_m4.dpatch: Removed, as applied upstream.
+  * debian/patches/00list: Updated accordingly.
+  * debian/patches/99_configure.dpatch: Updated.
+  * debian/rules, debian/patches/30_pkgconfig.dpatch: The real_install rule
+    has been replaced by install, upstream, so we now use it.
+  * debian/libnspr4-0d.symbols, debian/libnspr4-0d.symbols.amd64,
+    debian/libnspr4-0d.symbols.hurd_i386, debian/libnspr4-0d.symbols.i386,
+    debian/libnspr4-0d.symbols.ia64: Add symbols files to benefit from the
+    new features in dpkg-shlibdeps. Workaround debhelper lack of handling of
+    symbols files include with "../../" in the included file name.
+  * debian/control: Build depend on debhelper (>= 5.0.61) and dpkg-dev (>=
+    1.14.9), accordingly.
+  * debian/rules: Bump shlibs to current version, since new symbols were
+    added.
+
+ -- Mike Hommey <glandium@debian.org>  Sat, 24 Nov 2007 19:12:48 +0100
+
+nspr (4.6.7-1) unstable; urgency=low
+
+  * New upstream release, picked from NSPR_4_6_7_RTM cvs tag.
+  * debian/patches/18_kbsd_nspr.dpatch: Also add support for the Hurd.
+    Closes: #419528.
+
+ -- Mike Hommey <glandium@debian.org>  Sun, 01 Jul 2007 09:49:23 +0200
+
+nspr (4.6.6-3) unstable; urgency=low
+
+  * debian/rules: replace libnss3-0d (!) with libnspr4-0d in shlib
+    creation. Closes: #420069. Thanks Alexander Sack.
+
+ -- Mike Hommey <glandium@debian.org>  Fri, 20 Apr 2007 07:05:04 +0200
+
+nspr (4.6.6-2) unstable; urgency=low
+
+  * debian/control: Fixed section.
+  * debian/copyright: Fixed typo.
+  * debian/rules: Removed unused variables and replaced some = with :=.
+
+ -- Mike Hommey <glandium@debian.org>  Mon, 09 Apr 2007 20:29:27 +0200
+
+nspr (4.6.6-1) experimental; urgency=low
+
+  * Initial release. (Closes: #416150)
+
+ -- Mike Hommey <glandium@debian.org>  Sun, 25 Mar 2007 16:32:41 +0200
